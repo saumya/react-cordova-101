@@ -4,7 +4,8 @@
   "description": "a react application",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "2js": "babel --presets react,es2015 src --out-dir buildReact",
+    "pack": "webpack buildReact/app.js build/bundle.js"
   },
   "repository": {
     "type": "git",

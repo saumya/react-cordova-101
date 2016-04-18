@@ -52,7 +52,14 @@ npm install material-ui@0.15.0-beta.1 --save
 ```
 Just remember to install the `react-tap-event-plugin` before installing `material-ui`.
 
-We are ready to start coding.
+### configure the package.json
+```
+"main": "app.js",
+"scripts": {
+	"2js": "babel --presets react,es2015 src --out-dir buildReact",
+	"pack": "webpack buildReact/app.js build/bundle.js"
+},
+```
 
 
 
