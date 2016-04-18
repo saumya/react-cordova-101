@@ -26,8 +26,26 @@ From now on the commands will be fired from inside our project folder.
 ```
 
 ## React application
+
+Inside the `part_react` folder, run these commands
+ 
+ For dev-dependencies
 ```
 npm init
+npm install babel-cli --save-dev
+npm install babel-preset-es2015 --save-dev
+npm install babel-preset-react --save-dev
+npm install css-loader --save-dev
+npm install style-loader --save-dev
+npm install webpack --save-dev
+```
+ For dependencies
+```
+npm install react --save
+npm install react-dom --save
+npm install react-router --save
+npm install flux --save
+npm install underscore --save
 ```
 
 
