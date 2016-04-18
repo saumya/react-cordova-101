@@ -46,7 +46,13 @@ npm install react-dom --save
 npm install react-router --save
 npm install flux --save
 npm install underscore --save
+
+npm install react-tap-event-plugin --save
+npm install material-ui@0.15.0-beta.1 --save
 ```
+Just remember to install the `react-tap-event-plugin` before installing `material-ui`.
+
+We are ready to start coding.
 
 
 
