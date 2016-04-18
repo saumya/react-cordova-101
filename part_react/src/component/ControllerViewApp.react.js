@@ -35,7 +35,7 @@ import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 // Component declaration
-var AppControllerView = React.createClass({
+var ControllerViewApp = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired,
   },
@@ -79,4 +79,4 @@ var AppControllerView = React.createClass({
     );
   },
 });
-module.exports = AppControllerView;
+module.exports = ControllerViewApp;
