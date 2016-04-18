@@ -1,10 +1,10 @@
 React&Cordova
 ================
-### Mandatory
+## Cordova platform based projects
+
+Mandatory
  - Cordove CLI
  - plugman
-
-## Cordova platform based projects
 
 Get the libraries
   - Android : [https://github.com/apache/cordova-android/releases][2]
@@ -23,6 +23,11 @@ From now on the commands will be fired from inside our project folder.
 
 ```
 ./cordova/run ios
+```
+
+## React application
+```
+npm init
 ```
 
 
