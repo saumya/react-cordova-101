@@ -81,14 +81,25 @@ var ControllerViewApp = React.createClass({
 
       if(this.state.isDeviceReady==='YEP'){
         return(
-          <div>
-            <HomeView />
-            { /* renders the children */ this.props.children }
-          </div>
+          <nav>
+          <AppBar
+            title={<span style={style.title}>My App Bar</span>}
+            iconElementRight={<FlatButton label="Done" />} />
+          <Drawer docked={false} width={300} swipeAreaWidth={100} open={true} >
+              <MenuItem>Profile</MenuItem>
+              <MenuItem>View All Items</MenuItem>
+              <MenuItem>Logout</MenuItem>
+          </Drawer>
+
+          { /* renders the children */ this.props.children }
+
+          <FloatingActionButton mini={false} secondary={false} style={style}>
+            <ContentAdd />
+          </FloatingActionButton>
+          </nav>
         );
       }else{
         return(<BootView />);// final for Cordova
-
       }
 
   },
