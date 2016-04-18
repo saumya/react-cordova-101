@@ -5,7 +5,7 @@
 part_react/node_modules/
 
 ##### ReactApplication
-index.html
+# index.html
 part_react/build/
 part_react/buildReact/
 
