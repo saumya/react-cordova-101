@@ -90,13 +90,13 @@ var ControllerViewApp = React.createClass({
             title={<span style={style.title}>My App Bar</span>}
             iconElementRight={<FlatButton label="Done" />}
             onLeftIconButtonTouchTap={onLeftIconTouchTapHandler} />
-          <Drawer docked={false} 
+          <Drawer docked={false}
                   width={300} swipeAreaWidth={100}
                   open={this.state.isDrawerOpen}
                   onRequestChange={that.onRequestChange} >
               <MenuItem>Profile</MenuItem>
-              <MenuItem>View All Items</MenuItem>
-              <MenuItem>Logout</MenuItem>
+              <MenuItem onTouchTap={that.onMenuOne}>One</MenuItem>
+              <MenuItem onTouchTap={that.onMenuTwo}>Two</MenuItem>
           </Drawer>
 
           { /* renders the children */ this.props.children }
@@ -118,12 +118,20 @@ var ControllerViewApp = React.createClass({
     this.setState({isDeviceReady:'YEP'});// type 2: checks the if-else and then moves to the route too
     //this.context.router.push('/home');// type 1: just a different route
   },
-
+  // Drawer
   onLeftMenuTouchTap: function(){
     this.setState({isDrawerOpen: !this.state.isDrawerOpen});
   },
   onRequestChange: function(){
     this.setState({isDrawerOpen: !this.state.isDrawerOpen});
+  },
+  // End Drawer
+  // Menu
+  onMenuOne: function(){
+    this.context.router.push('/one');
+  },
+  onMenuTwo: function(){
+    this.context.router.push('/two');
   },
 
 });
