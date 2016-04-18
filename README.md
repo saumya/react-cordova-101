@@ -15,8 +15,8 @@ Creating a [phonegap platform project reference is here][3].
 ```
 //From inside the library
 ./bin/create path/to/preoject/folder com.package.name ProjectName
-
-./bin/create /Users/Pivotal/Documents/2_saumya/4_mobileApps/1_cordova/1_react-cordova_101/part-cordova com.saumyaray.cordreact CordReact1
+// Example
+./bin/create /Users/saumya/1_react-cordova_101/part-cordova com.saumyaray.cordreact CordReact1
 ```
 
 From now on the commands will be fired from inside our project folder.
