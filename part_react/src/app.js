@@ -26,7 +26,7 @@
   // routes
   var routes = (
     <Route path="/" component={AppControllerView}>
-      <IndexRoute component={BootView} />
+      <IndexRoute component={HomeView} />
       <Route path="home" component={HomeView} />
       <Route path="one" component={OneView} />
       <Route path="two" component={TwoView} />

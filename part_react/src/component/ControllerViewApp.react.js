@@ -85,7 +85,7 @@ var ControllerViewApp = React.createClass({
           <AppBar
             title={<span style={style.title}>My App Bar</span>}
             iconElementRight={<FlatButton label="Done" />} />
-          <Drawer docked={false} width={300} swipeAreaWidth={100} open={true} >
+          <Drawer docked={false} width={300} swipeAreaWidth={100} open={false} >
               <MenuItem>Profile</MenuItem>
               <MenuItem>View All Items</MenuItem>
               <MenuItem>Logout</MenuItem>
@@ -99,7 +99,7 @@ var ControllerViewApp = React.createClass({
           </nav>
         );
       }else{
-        return(<BootView />);// final for Cordova
+        return(<BootView />);
       }
 
   },
