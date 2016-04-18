@@ -1,0 +1,13 @@
+##### MAC
+.DS_Store
+
+##### Node
+part_react/node_modules/
+
+##### ReactApplication
+index.html
+part_react/build/
+part_react/buildReact/
+
+##### CordovaApplication
+part-cordova/
