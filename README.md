@@ -1,5 +1,15 @@
 React&Cordova
 ================
+
+Project settings.
+
+ - There will be 2 folders here.
+ - part_react
+ - part_cordova
+
+First one part_react will contain the reactJS applciation.
+Second one part_cordova will contain the cordova application and the generated reactJS code from above.
+
 ## Cordova platform based projects
 
 Mandatory
