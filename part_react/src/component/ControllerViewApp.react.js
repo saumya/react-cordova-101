@@ -52,7 +52,7 @@ var ControllerViewApp = React.createClass({
 
   // Cordova initialisation
   getInitialState: function(){
-    return ({isDeviceReady:'NOPE'});
+    return ({isDeviceReady:'NOPE',isDrawerOpen: false});
   },
   componentWillMount: function(){
     var that = this;
@@ -75,6 +75,10 @@ var ControllerViewApp = React.createClass({
       },
     };
 
+    var onLeftIconTouchTapHandler = function(){
+      that.onLeftMenuTouchTap();
+    }
+
       // Two ways to go about after checking the onDeviceReady event.
       // 1. First is just move to a different route on the event
       // 2. Second is adding a if-else and either return a default view or the application on the event
@@ -84,8 +88,12 @@ var ControllerViewApp = React.createClass({
           <nav>
           <AppBar
             title={<span style={style.title}>My App Bar</span>}
-            iconElementRight={<FlatButton label="Done" />} />
-          <Drawer docked={false} width={300} swipeAreaWidth={100} open={false} >
+            iconElementRight={<FlatButton label="Done" />}
+            onLeftIconButtonTouchTap={onLeftIconTouchTapHandler} />
+          <Drawer docked={false} 
+                  width={300} swipeAreaWidth={100}
+                  open={this.state.isDrawerOpen}
+                  onRequestChange={that.onRequestChange} >
               <MenuItem>Profile</MenuItem>
               <MenuItem>View All Items</MenuItem>
               <MenuItem>Logout</MenuItem>
@@ -110,5 +118,13 @@ var ControllerViewApp = React.createClass({
     this.setState({isDeviceReady:'YEP'});// type 2: checks the if-else and then moves to the route too
     //this.context.router.push('/home');// type 1: just a different route
   },
+
+  onLeftMenuTouchTap: function(){
+    this.setState({isDrawerOpen: !this.state.isDrawerOpen});
+  },
+  onRequestChange: function(){
+    this.setState({isDrawerOpen: !this.state.isDrawerOpen});
+  },
+
 });
 module.exports = ControllerViewApp;
