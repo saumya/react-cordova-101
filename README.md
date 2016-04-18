@@ -1,9 +1,8 @@
 React&Cordova
 ================
 
-Project settings.
-
- - There will be 2 folders here.
+There will be 2 folders here.
+ 
  - part_react
  - part_cordova
 
