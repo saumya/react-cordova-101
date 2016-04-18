@@ -18,12 +18,18 @@
 
   // Application
   var AppControllerView = require('./component/ControllerViewApp.react');
-  var Home = require('./component/ControllerViewHome.react');
+  var HomeView = require('./component/ControllerViewHome.react');
+  var BootView = require('./component/ControllerViewBoot.react');
+  var OneView = require('./component/One.react');
+  var TwoView = require('./component/Two.react');
 
   // routes
   var routes = (
     <Route path="/" component={AppControllerView}>
-      <IndexRoute component={Home} />
+      <IndexRoute component={BootView} />
+      <Route path="home" component={HomeView} />
+      <Route path="one" component={OneView} />
+      <Route path="two" component={TwoView} />
     </Route>
   );
 

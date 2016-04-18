@@ -27,12 +27,14 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 
 //import HardwareVideogameAsset from 'material-ui/svg-icons/hardware/videogame-asset';
 
-
-
-
 // changes for material-ui 0.15.0-beta-1
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+// Application components
+var HomeView = require('./ControllerViewHome.react');
+var BootView = require('./ControllerViewBoot.react');
+
 
 // Component declaration
 var ControllerViewApp = React.createClass({
@@ -48,6 +50,19 @@ var ControllerViewApp = React.createClass({
   },
   // changes for material-ui 0.15.0-beta-1
 
+  // Cordova initialisation
+  getInitialState: function(){
+    return ({isDeviceReady:'NOPE'});
+  },
+  componentWillMount: function(){
+    var that = this;
+    document.addEventListener("deviceready", that.onDeviceReady, false); // Cordova Event
+  },
+  componentWillUnmount: function(){
+    var that = this;
+    document.removeEventListener("deviceready", that.onDeviceReady, false);
+  },
+
 
   render: function(){
     var that = this;
@@ -59,24 +74,30 @@ var ControllerViewApp = React.createClass({
         cursor: 'pointer',
       },
     };
-    return(
-      <nav>
-          <AppBar
-            title={<span style={style.title}>My App Bar</span>}
-            iconElementRight={<FlatButton label="Done" />} />
-          <Drawer docked={false} width={300} swipeAreaWidth={100} open={false} >
-              <MenuItem>Profile</MenuItem>
-              <MenuItem>View All Items</MenuItem>
-              <MenuItem>Logout</MenuItem>
-          </Drawer>
 
-          { /* renders the children */ this.props.children }
+      // Two ways to go about after checking the onDeviceReady event.
+      // 1. First is just move to a different route on the event
+      // 2. Second is adding a if-else and either return a default view or the application on the event
 
-          <FloatingActionButton mini={false} secondary={false} style={style}>
-            <ContentAdd />
-          </FloatingActionButton>
-      </nav>
-    );
+      if(this.state.isDeviceReady==='YEP'){
+        return(
+          <div>
+            <HomeView />
+            { /* renders the children */ this.props.children }
+          </div>
+        );
+      }else{
+        return(<BootView />);// final for Cordova
+
+      }
+
+  },
+
+  // Cordova event handler
+  onDeviceReady: function(){
+    //alert('AppControllerView : Device Ready!');
+    this.setState({isDeviceReady:'YEP'});// type 2: checks the if-else and then moves to the route too
+    //this.context.router.push('/home');// type 1: just a different route
   },
 });
 module.exports = ControllerViewApp;

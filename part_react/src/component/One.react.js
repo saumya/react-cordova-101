@@ -27,15 +27,7 @@ var Home = React.createClass({
     };
     return(
       <div>
-          <nav className="u-full-width">
-            <h2>Device Ready</h2>
-            <ul id="navlist">
-              <li><Link to='/one' className="button button-red"> One </Link></li>
-              <li><Link to='/two' className="button button-red"> Two </Link></li>
-              <li><IndexLink to="/home">Home</IndexLink></li>
-            </ul>
-          </nav>
-
+          One 
         </div>
     );
   },
