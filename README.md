@@ -7,8 +7,8 @@ Project settings.
  - part_react
  - part_cordova
 
-First one part_react will contain the reactJS applciation.
-Second one part_cordova will contain the cordova application and the generated reactJS code from above.
+ First one `part_react` will contain the reactJS applciation.
+ Second one `part_cordova` will be generated form the Cordova library and will contain the cordova application and the generated reactJS code from above.
 
 ## Cordova platform based projects
 
