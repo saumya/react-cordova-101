@@ -1,8 +1,9 @@
 React&Cordova
 ================
  This project is a combination of 2 projects. One is for ReactJS web and one is for Cordova. You can choose any Cordova project, I am doing with iOS here.
- 
+
 There will be 2 folders
+ 
  - part_react
  - part_cordova
 
